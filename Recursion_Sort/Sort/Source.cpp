@@ -27,7 +27,7 @@ void quicksort(int* mas, int l, int r)
 	if (i < r) quicksort(mas, i, r);
 }
 //главная функция
-void main()
+int main()
 {
 	setlocale(LC_ALL, "Rus");
 	int* A = new int[n];
