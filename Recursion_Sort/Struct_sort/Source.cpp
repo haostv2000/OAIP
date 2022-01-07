@@ -1,15 +1,44 @@
 //Ѕыстра€ сортировка структуры
 #include<iostream>
+#include<Windows.h>
 #include<string>
 #include<iomanip>
-#include<Windows.h>
 using namespace std;
 struct strc {
 	string FIO;
 	int ngr;
-	int otc[4];
 	double sb;
-} mstud[25];
+	int otc[4];
+};
+void vvod_strc(strc mstud[], int n);
+void vivod_strc(strc s[], int n);
+void quick_sort(strc a[], int l, int r);
+int main() {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	srand(time(NULL));
+
+	strc mstud[25];
+
+	int nst;
+	cout << "¬ведите количество студентов:";
+	cin >> nst;
+	cin.ignore();
+
+	vvod_strc(mstud, nst);
+	vivod_strc(mstud, nst);
+	cout << endl;
+
+	cout << "________________________________________" << endl;
+
+	int l = 0;
+	int r = nst - 1;
+
+	quick_sort(mstud, l, r);
+	vivod_strc(mstud, nst);
+
+	system("pause");
+}
 void vvod_strc(strc mstud[], int n) {
 	for (int i = 0; i < n; i++)
 	{
@@ -54,7 +83,7 @@ void quick_sort(strc a[], int l, int r) {
 
 			ngr_temps = a[i].ngr;
 			a[i].ngr = a[j].ngr;
-			a[j].ngr = sb_temp;
+			a[j].ngr = ngr_temps;
 
 			tempFIO = a[i].FIO;
 			a[i].FIO = a[j].FIO;
@@ -66,22 +95,4 @@ void quick_sort(strc a[], int l, int r) {
 	} while (i < j);
 	if (l < j) quick_sort(a, l, j);
 	if (i < r) quick_sort(a, i, r);
-}
-int main() {
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
-	srand(time(NULL));
-	int nst;
-	cout << "¬ведите количество студентов:";
-	cin >> nst;
-	cin.ignore();
-	vvod_strc(mstud, nst);
-	vivod_strc(mstud, nst);
-	cout << endl;
-	cout << "________________________________________" << endl;
-	int l = 0;
-	int r = nst - 1;
-	quick_sort(mstud, l, r);
-	vivod_strc(mstud, nst);
-	system("pause");
 }
