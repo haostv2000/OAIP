@@ -1,3 +1,4 @@
+//Прямая рекурсия
 #include<iostream>
 using namespace std;
 int main() {
