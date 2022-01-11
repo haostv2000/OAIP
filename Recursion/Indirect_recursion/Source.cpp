@@ -8,4 +8,4 @@ int main() {
 }
 void f() {
 	main();
-} 
+}
