@@ -5,6 +5,7 @@ void f();
 int main() {
 	cout << "Hello world!" << endl;
 	f();
+	
 }
 void f() {
 	main();
