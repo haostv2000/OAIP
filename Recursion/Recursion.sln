@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Out_numbers_recursion", "Ou
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ab_outnumbersrec", "ab_outnumbersrec\ab_outnumbersrec.vcxproj", "{F91A45B7-D6A1-4229-91DB-BA17E3780685}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ArraySum", "ArraySum\ArraySum.vcxproj", "{99DBDD25-5CBB-47AD-A853-F22CD6979E3F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -61,6 +63,14 @@ Global
 		{F91A45B7-D6A1-4229-91DB-BA17E3780685}.Release|x64.Build.0 = Release|x64
 		{F91A45B7-D6A1-4229-91DB-BA17E3780685}.Release|x86.ActiveCfg = Release|Win32
 		{F91A45B7-D6A1-4229-91DB-BA17E3780685}.Release|x86.Build.0 = Release|Win32
+		{99DBDD25-5CBB-47AD-A853-F22CD6979E3F}.Debug|x64.ActiveCfg = Debug|x64
+		{99DBDD25-5CBB-47AD-A853-F22CD6979E3F}.Debug|x64.Build.0 = Debug|x64
+		{99DBDD25-5CBB-47AD-A853-F22CD6979E3F}.Debug|x86.ActiveCfg = Debug|Win32
+		{99DBDD25-5CBB-47AD-A853-F22CD6979E3F}.Debug|x86.Build.0 = Debug|Win32
+		{99DBDD25-5CBB-47AD-A853-F22CD6979E3F}.Release|x64.ActiveCfg = Release|x64
+		{99DBDD25-5CBB-47AD-A853-F22CD6979E3F}.Release|x64.Build.0 = Release|x64
+		{99DBDD25-5CBB-47AD-A853-F22CD6979E3F}.Release|x86.ActiveCfg = Release|Win32
+		{99DBDD25-5CBB-47AD-A853-F22CD6979E3F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
