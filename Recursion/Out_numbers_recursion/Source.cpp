@@ -4,7 +4,7 @@ using namespace std;
 void vivod(int n) {
 	int t;
 	if (n < 1)
-		t = 0;
+		return;
 	else {
 		t = n;
 		vivod(n - 1);
