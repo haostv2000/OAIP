@@ -22,6 +22,7 @@ void mas_out(int arr[],int n) {
 		mas_out(arr, n - 1);
 		cout <<" "<< arr[n - 1];
 	}
+
 }
 int main() {
 	setlocale(LC_ALL, "rus");
