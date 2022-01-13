@@ -29,7 +29,6 @@ int main() {
 	int array[N] = { 1,2,3,4,5 };
 	//int sum_array = sum(array, N);//Нерекурсивная функция
 	int sum_array = sum(0,array,N);//Рекурсивная функция
-
 	cout << "Сумма элементов массива:" << sum_array <<endl;
 	cout << "Вывод массива:\n";
 	mas_out(array,N);
