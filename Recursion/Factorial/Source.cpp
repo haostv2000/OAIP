@@ -8,6 +8,7 @@ int main() {
 	cout << n << "! = " << y << endl;
 	system("pause");
 }
+
 int factorial(int n) {//-->.cpp
 	int t;
 	if (n <= 1)
