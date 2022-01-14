@@ -7,7 +7,7 @@ int l, r;
 //функция сортировки
 void quicksort(int* mas, int l, int r)
 {
-	int mid, count;
+	int mid, temp;
 	int i = l, j = r;
 	mid = mas[(i + j) / 2]; //вычисление опорного элемента
 	do
@@ -16,9 +16,9 @@ void quicksort(int* mas, int l, int r)
 		while (mas[j] > mid) j--;
 		if (i <= j) //перестановка элементов
 		{
-			count = mas[i];
+			temp = mas[i];
 			mas[i] = mas[j];
-			mas[j] = count;
+			mas[j] = temp;
 			i++;
 			j--;
 		}
