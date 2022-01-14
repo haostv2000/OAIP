@@ -30,19 +30,15 @@ void quicksort(int* mas, int l, int r)
 int main()
 {
 	setlocale(LC_ALL, "Rus");
-	int* A = new int[n];
+	//int* A = new int[n];
 	srand(time(NULL));
 	cout << "Исходный массив: ";
-	for (int i = 0; i < n; i++)
-	{
-		A[i] = rand() % 10;
-		cout << A[i] << " ";
-	}
+	int A[n] = { 1,9,8,5,-3,2,10 };
 	l = 0; r = n - 1;
 	quicksort(A, l, r);
 	cout << endl << "Результирующий массив: ";
 	for (int i = 0; i < n; i++) cout << A[i] << " ";
-	delete[]A;
+	//delete[]A;
 	system("pause");
 }
 
