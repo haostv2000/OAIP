@@ -7,24 +7,24 @@ int l, r;
 //функция сортировки
 void quicksort(int* mas, int l, int r)
 {
-	int mid, temp;
-	int i = l, j = r;
+	int mid, temp;//Для хранения среднего эл-та и переменная для буффера
+	int i = l, j = r;//СЧЕТЧИКИ ДЛЯ ЦИКЛА
 	mid = mas[(i + j) / 2]; //вычисление опорного элемента
 	do
 	{
-		while (mas[i] < mid) i++;
-		while (mas[j] > mid) j--;
+		while (mas[i] < mid) i++;//Пока текущий елемент меньше среднего сдвигаем i вправо
+		while (mas[j] > mid) j--;//Пока текущий элемент больше среднего сдвигаем j влево
 		if (i <= j) //перестановка элементов
 		{
 			temp = mas[i];
 			mas[i] = mas[j];
-			mas[j] = temp;
-			i++;
+			mas[j] = temp;//Поменял элементы местами
+			i++;//Сдвинул счетчик
 			j--;
 		}
 	} while (i < j);
-	if (l < j) quicksort(mas, l, j);
-	if (i < r) quicksort(mas, i, r);
+	if (l < j) quicksort(mas, l, j);//Проверяю условие на то, что элементов больше чем один слева
+	if (i < r) quicksort(mas, i, r);//Проверяю условие на то, что элементов больше чем один справа
 }
 //главная функция
 int main()
