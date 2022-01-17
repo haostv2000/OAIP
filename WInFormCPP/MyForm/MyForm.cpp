@@ -10,3 +10,8 @@ void main(array<String^>^ args)
 	MyForm::MyForm form;
 	Application::Run(% form);
 }
+
+System::Void MyForm::MyForm::button1_Click(System::Object^ sender, System::EventArgs^ e)
+{ 
+	label1->Text = "Hello User";
+}
