@@ -40,6 +40,8 @@ namespace MyForm {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::ToolTip^ toolTip1;
 	private: System::Windows::Forms::Timer^ timer1;
+	private: System::Windows::Forms::ToolTip^ toolTip2;
+	private: System::Windows::Forms::Timer^ timer2;
 	private: System::ComponentModel::IContainer^ components;
 
 	protected:
@@ -64,11 +66,14 @@ namespace MyForm {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->toolTip1 = (gcnew System::Windows::Forms::ToolTip(this->components));
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
+			this->toolTip2 = (gcnew System::Windows::Forms::ToolTip(this->components));
+			this->timer2 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->tableLayoutPanel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// tableLayoutPanel1
 			// 
+			this->tableLayoutPanel1->BackColor = System::Drawing::SystemColors::Control;
 			this->tableLayoutPanel1->ColumnCount = 2;
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				50)));
@@ -83,7 +88,7 @@ namespace MyForm {
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 20)));
-			this->tableLayoutPanel1->Size = System::Drawing::Size(630, 480);
+			this->tableLayoutPanel1->Size = System::Drawing::Size(715, 620);
 			this->tableLayoutPanel1->TabIndex = 0;
 			// 
 			// button1
@@ -94,11 +99,11 @@ namespace MyForm {
 			this->button1->BackColor = System::Drawing::SystemColors::ActiveBorder;
 			this->tableLayoutPanel1->SetColumnSpan(this->button1, 2);
 			this->button1->ForeColor = System::Drawing::Color::Black;
-			this->button1->Location = System::Drawing::Point(80, 320);
+			this->button1->Location = System::Drawing::Point(80, 390);
 			this->button1->Margin = System::Windows::Forms::Padding(80);
 			this->button1->MinimumSize = System::Drawing::Size(470, 54);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(470, 80);
+			this->button1->Size = System::Drawing::Size(555, 150);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"button1";
 			this->button1->UseVisualStyleBackColor = false;
@@ -117,7 +122,7 @@ namespace MyForm {
 				static_cast<System::Byte>(204)));
 			this->label1->Location = System::Drawing::Point(3, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(624, 240);
+			this->label1->Size = System::Drawing::Size(709, 310);
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"Your Text";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -133,7 +138,7 @@ namespace MyForm {
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Control;
-			this->ClientSize = System::Drawing::Size(630, 480);
+			this->ClientSize = System::Drawing::Size(715, 620);
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->MinimumSize = System::Drawing::Size(648, 475);
 			this->Name = L"MyForm";
@@ -146,11 +151,12 @@ namespace MyForm {
 
 		}
 #pragma endregion
-		Int32 timeCounter;
+Int32 timeCounter;//Создаём переменную целого типа
 private: System::Void button1_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-	RandomRGB(rgb);
+	RandomRGB(rgb);//Вызываю функцию рандома для цвета rgb
 	button1->BackColor = System::Drawing::Color::FromArgb(rgb[0], rgb[1], rgb[2]);
 }
+
 private: System::Void label1_MouseHover(System::Object^ sender, System::EventArgs^ e) {
 	label1->Text = "COLOR RUSH";
 	toolTip1->SetToolTip(this->label1, "Ваше текст изменился");
@@ -164,25 +170,37 @@ private: System::Void button1_MouseDown(System::Object^ sender, System::Windows:
 	case::System::Windows::Forms::MouseButtons::Right:
 		eventString = "R";
 		break;
+	case::System::Windows::Forms::MouseButtons::Middle:
+		eventString = "M";
+		break;
 	default:
 		break;
 	}
-	if (eventString != nullptr) {
-		MessageBox::Show("Ваше сообщение");
+	if (eventString == "R") {
+		MessageBox::Show("Вы нажали правую кнопку мыши");
+	}
+	else if (eventString == "M") {
+		MessageBox::Show("Вы нажали среднюю кнопку мыши");
 	}
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	tableLayoutPanel1->BackColor = System::Drawing::SystemColors::ActiveCaption;
+	tableLayoutPanel1->BackColor = System::Drawing::SystemColors::Info;
 }
+
 private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	timeCounter = 0;
-	timer1->Interval = 500;
+	timer1->Interval = 500;//0.5 секунды
 	timer1->Enabled = true;
 }
 
-	private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
-		++timeCounter;
-		if (timeCounter == 5) label1->Text = "Таймер остановился";
+private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
+		++timeCounter;//0 1 2 3 4 5
+		label1->Text = timeCounter.ToString();
+		if (timeCounter == 5) { 
+			label1->Text = "Таймер остановился"; 
+			timer1->Enabled = false;
+		}
 	}
+
 };
 }
