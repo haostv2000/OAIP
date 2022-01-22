@@ -59,6 +59,9 @@ namespace MyForm {
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Panel^ panel3;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::ContextMenuStrip^ contextMenuStrip1;
+	private: System::Windows::Forms::ToolStripMenuItem^ ïğèâåòToolStripMenuItem;
+	private: System::ComponentModel::IContainer^ components;
 
 
 
@@ -67,7 +70,7 @@ namespace MyForm {
 		/// <summary>
 		/// Îáÿçàòåëüíàÿ ïåğåìåííàÿ êîíñòğóêòîğà.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -76,6 +79,8 @@ namespace MyForm {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->ôàéëToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->ïğàâêàToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -94,12 +99,15 @@ namespace MyForm {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
+			this->ïğèâåòToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->panel1->SuspendLayout();
 			this->tableLayoutPanel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->panel3->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			this->contextMenuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// menuStrip1
@@ -175,7 +183,6 @@ namespace MyForm {
 			this->ğàçìåğÊàğòèíêèToolStripMenuItem->Name = L"ğàçìåğÊàğòèíêèToolStripMenuItem";
 			this->ğàçìåğÊàğòèíêèToolStripMenuItem->Size = System::Drawing::Size(211, 26);
 			this->ğàçìåğÊàğòèíêèToolStripMenuItem->Text = L"Ğàçìåğ êàğòèíêè";
-			this->ğàçìåğÊàğòèíêèToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::ğàçìåğÊàğòèíêèToolStripMenuItem_Click);
 			// 
 			// panel1
 			// 
@@ -212,6 +219,7 @@ namespace MyForm {
 			this->panel2->Controls->Add(this->button4);
 			this->panel2->Controls->Add(this->button2);
 			this->panel2->Controls->Add(this->button3);
+			this->panel2->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panel2->Location = System::Drawing::Point(3, 3);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(191, 362);
@@ -260,8 +268,8 @@ namespace MyForm {
 			// panel3
 			// 
 			this->panel3->BackColor = System::Drawing::SystemColors::ScrollBar;
+			this->panel3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->panel3->Controls->Add(this->pictureBox1);
-			this->panel3->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panel3->Location = System::Drawing::Point(200, 3);
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(602, 362);
@@ -269,6 +277,10 @@ namespace MyForm {
 			// 
 			// pictureBox1
 			// 
+			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->pictureBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->pictureBox1->ContextMenuStrip = this->contextMenuStrip1;
+			this->pictureBox1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->pictureBox1->ImageLocation = L"D:\\OAIP\\ContextMenu\\ContextMenu\\kopa.png";
 			this->pictureBox1->Location = System::Drawing::Point(229, 87);
 			this->pictureBox1->Name = L"pictureBox1";
@@ -276,8 +288,22 @@ namespace MyForm {
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
-			this->pictureBox1->MouseLeave += gcnew System::EventHandler(this, &MyForm::pictureBox1_MouseLeave);
-			this->pictureBox1->MouseHover += gcnew System::EventHandler(this, &MyForm::pictureBox1_MouseHover);
+			this->pictureBox1->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::pictureBox1_MouseDown);
+			this->pictureBox1->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::pictureBox1_MouseMove);
+			this->pictureBox1->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::pictureBox1_MouseUp);
+			// 
+			// contextMenuStrip1
+			// 
+			this->contextMenuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
+			this->contextMenuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->ïğèâåòToolStripMenuItem });
+			this->contextMenuStrip1->Name = L"contextMenuStrip1";
+			this->contextMenuStrip1->Size = System::Drawing::Size(130, 28);
+			// 
+			// ïğèâåòToolStripMenuItem
+			// 
+			this->ïğèâåòToolStripMenuItem->Name = L"ïğèâåòToolStripMenuItem";
+			this->ïğèâåòToolStripMenuItem->Size = System::Drawing::Size(129, 24);
+			this->ïğèâåòToolStripMenuItem->Text = L"Ïğèâåò";
 			// 
 			// MyForm
 			// 
@@ -291,7 +317,6 @@ namespace MyForm {
 			this->MinimumSize = System::Drawing::Size(670, 350);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
-			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->panel1->ResumeLayout(false);
@@ -299,6 +324,7 @@ namespace MyForm {
 			this->panel2->ResumeLayout(false);
 			this->panel3->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			this->contextMenuStrip1->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -307,6 +333,10 @@ namespace MyForm {
 		Int32 sx=0;
 		Int32 sy=0;
 		Int32 tm = 1;
+		bool dragging = false;
+		Int32 currentX, currentY;
+
+
 private: System::Void ò¸ìíûéToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	panel1->BackColor = System::Drawing::SystemColors::GrayText;
 	menuStrip1->BackColor = System::Drawing::SystemColors::GrayText;
@@ -334,19 +364,29 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 	pictureBox1->Dock = System::Windows::Forms::DockStyle::None;
 }
-private: System::Void ğàçìåğÊàğòèíêèToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-	++tm;
-	if (tm % 2 == 0) panel1->Enabled = true;
-	else panel1->Enabled = false;
+//private: System::Void ğàçìåğÊàğòèíêèToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+//	++tm;
+//	if (tm % 2 == 0) panel1->Enabled = true;
+//	else panel1->Enabled = false;
+//}
+//private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+//	panel1->Enabled = false;
+//}
+
+private: System::Void pictureBox1_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	dragging = true;
+	currentX = e->X;
+	currentY = e->Y;
 }
-private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-	panel1->Enabled = false;
+private: System::Void pictureBox1_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	if(dragging)
+	{
+		pictureBox1->Top = pictureBox1->Top + (e->Y - currentY);
+		pictureBox1->Left = pictureBox1->Left + (e->X - currentX);
+	}
 }
-private: System::Void pictureBox1_MouseHover(System::Object^ sender, System::EventArgs^ e) {
-	pictureBox1->ImageLocation = L"D:\\OAIP\\ContextMenu\\ContextMenu\\karich.jpg";
-}
-private: System::Void pictureBox1_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
-	pictureBox1->ImageLocation = L"D:\\OAIP\\ContextMenu\\ContextMenu\\kopa.png";
+private: System::Void pictureBox1_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	dragging = false;
 }
 };
 }
