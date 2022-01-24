@@ -106,12 +106,12 @@ namespace Graphic {
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
-			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
@@ -126,9 +126,10 @@ namespace Graphic {
 			this->button1->AutoSize = true;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Arial", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button1->Location = System::Drawing::Point(335, 41);
+			this->button1->Location = System::Drawing::Point(251, 33);
+			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(153, 29);
+			this->button1->Size = System::Drawing::Size(115, 26);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Âûâîä òåêñòà";
 			this->button1->UseVisualStyleBackColor = true;
@@ -139,9 +140,10 @@ namespace Graphic {
 			this->button2->AutoSize = true;
 			this->button2->Font = (gcnew System::Drawing::Font(L"Arial", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button2->Location = System::Drawing::Point(10, 364);
+			this->button2->Location = System::Drawing::Point(8, 296);
+			this->button2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(153, 33);
+			this->button2->Size = System::Drawing::Size(115, 27);
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"Çàïóñê ôîðìû";
 			this->button2->UseVisualStyleBackColor = true;
@@ -152,9 +154,10 @@ namespace Graphic {
 			this->button3->AutoSize = true;
 			this->button3->Font = (gcnew System::Drawing::Font(L"Arial", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button3->Location = System::Drawing::Point(335, 364);
+			this->button3->Location = System::Drawing::Point(251, 296);
+			this->button3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(153, 33);
+			this->button3->Size = System::Drawing::Size(115, 27);
 			this->button3->TabIndex = 2;
 			this->button3->Text = L"Âûõîä";
 			this->button3->UseVisualStyleBackColor = true;
@@ -168,9 +171,11 @@ namespace Graphic {
 			this->groupBox1->Controls->Add(this->checkBox2);
 			this->groupBox1->Font = (gcnew System::Drawing::Font(L"Arial", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->groupBox1->Location = System::Drawing::Point(10, 255);
+			this->groupBox1->Location = System::Drawing::Point(8, 207);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(478, 103);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->groupBox1->Size = System::Drawing::Size(358, 84);
 			this->groupBox1->TabIndex = 3;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Ñòèëü øðèôòà";
@@ -178,9 +183,10 @@ namespace Graphic {
 			// checkBox4
 			// 
 			this->checkBox4->AutoSize = true;
-			this->checkBox4->Location = System::Drawing::Point(177, 70);
+			this->checkBox4->Location = System::Drawing::Point(133, 57);
+			this->checkBox4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->checkBox4->Name = L"checkBox4";
-			this->checkBox4->Size = System::Drawing::Size(149, 23);
+			this->checkBox4->Size = System::Drawing::Size(129, 20);
 			this->checkBox4->TabIndex = 7;
 			this->checkBox4->Text = L"Ïåðå÷åðêíóòûé";
 			this->checkBox4->UseVisualStyleBackColor = true;
@@ -188,9 +194,10 @@ namespace Graphic {
 			// checkBox1
 			// 
 			this->checkBox1->AutoSize = true;
-			this->checkBox1->Location = System::Drawing::Point(6, 41);
+			this->checkBox1->Location = System::Drawing::Point(4, 33);
+			this->checkBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(129, 23);
+			this->checkBox1->Size = System::Drawing::Size(110, 20);
 			this->checkBox1->TabIndex = 4;
 			this->checkBox1->Text = L"Ïîëóæèðíûé";
 			this->checkBox1->UseVisualStyleBackColor = true;
@@ -198,9 +205,10 @@ namespace Graphic {
 			// checkBox3
 			// 
 			this->checkBox3->AutoSize = true;
-			this->checkBox3->Location = System::Drawing::Point(177, 41);
+			this->checkBox3->Location = System::Drawing::Point(133, 33);
+			this->checkBox3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->checkBox3->Name = L"checkBox3";
-			this->checkBox3->Size = System::Drawing::Size(142, 23);
+			this->checkBox3->Size = System::Drawing::Size(121, 20);
 			this->checkBox3->TabIndex = 6;
 			this->checkBox3->Text = L"Ïîä÷åðêíóòûé";
 			this->checkBox3->UseVisualStyleBackColor = true;
@@ -208,18 +216,20 @@ namespace Graphic {
 			// checkBox2
 			// 
 			this->checkBox2->AutoSize = true;
-			this->checkBox2->Location = System::Drawing::Point(6, 70);
+			this->checkBox2->Location = System::Drawing::Point(4, 57);
+			this->checkBox2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->checkBox2->Name = L"checkBox2";
-			this->checkBox2->Size = System::Drawing::Size(116, 23);
+			this->checkBox2->Size = System::Drawing::Size(98, 20);
 			this->checkBox2->TabIndex = 5;
 			this->checkBox2->Text = L"Êóðñèâíûé";
 			this->checkBox2->UseVisualStyleBackColor = true;
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(10, 41);
+			this->textBox1->Location = System::Drawing::Point(8, 33);
+			this->textBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(319, 22);
+			this->textBox1->Size = System::Drawing::Size(240, 20);
 			this->textBox1->TabIndex = 4;
 			// 
 			// label1
@@ -227,9 +237,10 @@ namespace Graphic {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label1->Location = System::Drawing::Point(6, 16);
+			this->label1->Location = System::Drawing::Point(4, 13);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(98, 22);
+			this->label1->Size = System::Drawing::Size(85, 17);
 			this->label1->TabIndex = 5;
 			this->label1->Text = L"Ââåäèòå òåêñò";
 			// 
@@ -240,9 +251,11 @@ namespace Graphic {
 			this->groupBox2->Controls->Add(this->radioButton3);
 			this->groupBox2->Controls->Add(this->radioButton2);
 			this->groupBox2->Controls->Add(this->radioButton1);
-			this->groupBox2->Location = System::Drawing::Point(335, 76);
+			this->groupBox2->Location = System::Drawing::Point(251, 62);
+			this->groupBox2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Size = System::Drawing::Size(153, 173);
+			this->groupBox2->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->groupBox2->Size = System::Drawing::Size(115, 141);
 			this->groupBox2->TabIndex = 6;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Öâåò òåêñòà";
@@ -251,9 +264,10 @@ namespace Graphic {
 			// 
 			this->radioButton5->BackColor = System::Drawing::Color::Black;
 			this->radioButton5->ForeColor = System::Drawing::Color::White;
-			this->radioButton5->Location = System::Drawing::Point(6, 142);
+			this->radioButton5->Location = System::Drawing::Point(4, 115);
+			this->radioButton5->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->radioButton5->Name = L"radioButton5";
-			this->radioButton5->Size = System::Drawing::Size(87, 21);
+			this->radioButton5->Size = System::Drawing::Size(65, 17);
 			this->radioButton5->TabIndex = 4;
 			this->radioButton5->TabStop = true;
 			this->radioButton5->Text = L"×åðíûé";
@@ -263,9 +277,10 @@ namespace Graphic {
 			// 
 			this->radioButton4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(251)), static_cast<System::Int32>(static_cast<System::Byte>(242)),
 				static_cast<System::Int32>(static_cast<System::Byte>(89)));
-			this->radioButton4->Location = System::Drawing::Point(6, 115);
+			this->radioButton4->Location = System::Drawing::Point(4, 93);
+			this->radioButton4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->radioButton4->Name = L"radioButton4";
-			this->radioButton4->Size = System::Drawing::Size(87, 21);
+			this->radioButton4->Size = System::Drawing::Size(65, 17);
 			this->radioButton4->TabIndex = 3;
 			this->radioButton4->TabStop = true;
 			this->radioButton4->Text = L"Æåëòûé";
@@ -275,9 +290,10 @@ namespace Graphic {
 			// 
 			this->radioButton3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(140)), static_cast<System::Int32>(static_cast<System::Byte>(251)),
 				static_cast<System::Int32>(static_cast<System::Byte>(113)));
-			this->radioButton3->Location = System::Drawing::Point(6, 88);
+			this->radioButton3->Location = System::Drawing::Point(4, 72);
+			this->radioButton3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->radioButton3->Name = L"radioButton3";
-			this->radioButton3->Size = System::Drawing::Size(87, 21);
+			this->radioButton3->Size = System::Drawing::Size(65, 17);
 			this->radioButton3->TabIndex = 2;
 			this->radioButton3->TabStop = true;
 			this->radioButton3->Text = L"Çåëåíûé";
@@ -287,9 +303,10 @@ namespace Graphic {
 			// 
 			this->radioButton2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(100)), static_cast<System::Int32>(static_cast<System::Byte>(91)),
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			this->radioButton2->Location = System::Drawing::Point(6, 64);
+			this->radioButton2->Location = System::Drawing::Point(4, 52);
+			this->radioButton2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->radioButton2->Name = L"radioButton2";
-			this->radioButton2->Size = System::Drawing::Size(87, 21);
+			this->radioButton2->Size = System::Drawing::Size(65, 17);
 			this->radioButton2->TabIndex = 1;
 			this->radioButton2->TabStop = true;
 			this->radioButton2->Text = L"Ñèíèé";
@@ -300,9 +317,10 @@ namespace Graphic {
 			this->radioButton1->AutoSize = true;
 			this->radioButton1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(248)), static_cast<System::Int32>(static_cast<System::Byte>(84)),
 				static_cast<System::Int32>(static_cast<System::Byte>(84)));
-			this->radioButton1->Location = System::Drawing::Point(7, 37);
+			this->radioButton1->Location = System::Drawing::Point(5, 30);
+			this->radioButton1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->radioButton1->Name = L"radioButton1";
-			this->radioButton1->Size = System::Drawing::Size(87, 21);
+			this->radioButton1->Size = System::Drawing::Size(70, 17);
 			this->radioButton1->TabIndex = 0;
 			this->radioButton1->TabStop = true;
 			this->radioButton1->Text = L"Êðàñíûé";
@@ -311,10 +329,10 @@ namespace Graphic {
 			// listBox1
 			// 
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 16;
-			this->listBox1->Location = System::Drawing::Point(10, 69);
+			this->listBox1->Location = System::Drawing::Point(8, 56);
+			this->listBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(319, 180);
+			this->listBox1->Size = System::Drawing::Size(240, 147);
 			this->listBox1->TabIndex = 7;
 			// 
 			// menuStrip1
@@ -324,7 +342,8 @@ namespace Graphic {
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->ìåíþToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(711, 28);
+			this->menuStrip1->Padding = System::Windows::Forms::Padding(4, 2, 0, 2);
+			this->menuStrip1->Size = System::Drawing::Size(533, 24);
 			this->menuStrip1->TabIndex = 8;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -332,20 +351,20 @@ namespace Graphic {
 			// 
 			this->ìåíþToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->òåêñòîâûéÐåäàêòîðToolStripMenuItem });
 			this->ìåíþToolStripMenuItem->Name = L"ìåíþToolStripMenuItem";
-			this->ìåíþToolStripMenuItem->Size = System::Drawing::Size(65, 24);
+			this->ìåíþToolStripMenuItem->Size = System::Drawing::Size(53, 20);
 			this->ìåíþToolStripMenuItem->Text = L"Ìåíþ";
 			// 
 			// òåêñòîâûéÐåäàêòîðToolStripMenuItem
 			// 
 			this->òåêñòîâûéÐåäàêòîðToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->çàãðóçèòüÈçîáðàæåíèåToolStripMenuItem });
 			this->òåêñòîâûéÐåäàêòîðToolStripMenuItem->Name = L"òåêñòîâûéÐåäàêòîðToolStripMenuItem";
-			this->òåêñòîâûéÐåäàêòîðToolStripMenuItem->Size = System::Drawing::Size(150, 26);
+			this->òåêñòîâûéÐåäàêòîðToolStripMenuItem->Size = System::Drawing::Size(121, 22);
 			this->òåêñòîâûéÐåäàêòîðToolStripMenuItem->Text = L"Îòêðûòü";
 			// 
 			// çàãðóçèòüÈçîáðàæåíèåToolStripMenuItem
 			// 
 			this->çàãðóçèòüÈçîáðàæåíèåToolStripMenuItem->Name = L"çàãðóçèòüÈçîáðàæåíèåToolStripMenuItem";
-			this->çàãðóçèòüÈçîáðàæåíèåToolStripMenuItem->Size = System::Drawing::Size(260, 26);
+			this->çàãðóçèòüÈçîáðàæåíèåToolStripMenuItem->Size = System::Drawing::Size(205, 22);
 			this->çàãðóçèòüÈçîáðàæåíèåToolStripMenuItem->Text = L"Çàãðóçèòü èçîáðàæåíèå";
 			this->çàãðóçèòüÈçîáðàæåíèåToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::çàãðóçèòüÈçîáðàæåíèåToolStripMenuItem_Click);
 			// 
@@ -354,10 +373,11 @@ namespace Graphic {
 			this->tabControl1->Controls->Add(this->tabPage1);
 			this->tabControl1->Controls->Add(this->tabPage2);
 			this->tabControl1->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->tabControl1->Location = System::Drawing::Point(0, 28);
+			this->tabControl1->Location = System::Drawing::Point(0, 24);
+			this->tabControl1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(711, 537);
+			this->tabControl1->Size = System::Drawing::Size(533, 435);
 			this->tabControl1->TabIndex = 9;
 			// 
 			// tabPage1
@@ -370,10 +390,11 @@ namespace Graphic {
 			this->tabPage1->Controls->Add(this->button3);
 			this->tabPage1->Controls->Add(this->textBox1);
 			this->tabPage1->Controls->Add(this->groupBox1);
-			this->tabPage1->Location = System::Drawing::Point(4, 25);
+			this->tabPage1->Location = System::Drawing::Point(4, 22);
+			this->tabPage1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->tabPage1->Name = L"tabPage1";
-			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage1->Size = System::Drawing::Size(703, 508);
+			this->tabPage1->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->tabPage1->Size = System::Drawing::Size(525, 409);
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"Òåêñòîâûé ðåäàêòîð";
 			this->tabPage1->UseVisualStyleBackColor = true;
@@ -385,19 +406,32 @@ namespace Graphic {
 			this->tabPage2->Controls->Add(this->button5);
 			this->tabPage2->Controls->Add(this->button4);
 			this->tabPage2->Controls->Add(this->pictureBox1);
-			this->tabPage2->Location = System::Drawing::Point(4, 25);
+			this->tabPage2->Location = System::Drawing::Point(4, 22);
+			this->tabPage2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->tabPage2->Name = L"tabPage2";
-			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage2->Size = System::Drawing::Size(703, 508);
+			this->tabPage2->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->tabPage2->Size = System::Drawing::Size(525, 409);
 			this->tabPage2->TabIndex = 1;
 			this->tabPage2->Text = L"Ãðàôè÷åñêèé ðåäàêòîð";
 			this->tabPage2->UseVisualStyleBackColor = true;
 			// 
+			// button7
+			// 
+			this->button7->Location = System::Drawing::Point(6, 145);
+			this->button7->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(88, 46);
+			this->button7->TabIndex = 4;
+			this->button7->Text = L"Ïîâåðíóòü";
+			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &MyForm::button7_Click);
+			// 
 			// button6
 			// 
-			this->button6->Location = System::Drawing::Point(8, 118);
+			this->button6->Location = System::Drawing::Point(6, 96);
+			this->button6->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(118, 54);
+			this->button6->Size = System::Drawing::Size(88, 44);
 			this->button6->TabIndex = 3;
 			this->button6->Text = L" Óáðàòü êàðòèíêó";
 			this->button6->UseVisualStyleBackColor = true;
@@ -405,9 +439,10 @@ namespace Graphic {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(8, 62);
+			this->button5->Location = System::Drawing::Point(6, 50);
+			this->button5->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(118, 50);
+			this->button5->Size = System::Drawing::Size(88, 41);
 			this->button5->TabIndex = 2;
 			this->button5->Text = L"Î÷èñòèòü";
 			this->button5->UseVisualStyleBackColor = true;
@@ -415,9 +450,10 @@ namespace Graphic {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(8, 6);
+			this->button4->Location = System::Drawing::Point(6, 5);
+			this->button4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(118, 50);
+			this->button4->Size = System::Drawing::Size(88, 41);
 			this->button4->TabIndex = 1;
 			this->button4->Text = L"Íàðèñîâàòü";
 			this->button4->UseVisualStyleBackColor = true;
@@ -427,34 +463,26 @@ namespace Graphic {
 			// 
 			this->pictureBox1->BackColor = System::Drawing::Color::DimGray;
 			this->pictureBox1->Dock = System::Windows::Forms::DockStyle::Right;
-			this->pictureBox1->Location = System::Drawing::Point(132, 3);
+			this->pictureBox1->Location = System::Drawing::Point(97, 2);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(568, 502);
+			this->pictureBox1->Size = System::Drawing::Size(426, 405);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
 			// 
-			// button7
-			// 
-			this->button7->Location = System::Drawing::Point(8, 178);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(118, 56);
-			this->button7->TabIndex = 4;
-			this->button7->Text = L"Ïîâåðíóòü";
-			this->button7->UseVisualStyleBackColor = true;
-			this->button7->Click += gcnew System::EventHandler(this, &MyForm::button7_Click);
-			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::InactiveCaption;
-			this->ClientSize = System::Drawing::Size(711, 565);
+			this->ClientSize = System::Drawing::Size(533, 459);
 			this->Controls->Add(this->tabControl1);
 			this->Controls->Add(this->menuStrip1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 			this->MainMenuStrip = this->menuStrip1;
-			this->MinimumSize = System::Drawing::Size(530, 460);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->MinimumSize = System::Drawing::Size(402, 381);
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"MyForm";
