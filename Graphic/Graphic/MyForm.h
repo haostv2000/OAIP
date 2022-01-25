@@ -68,6 +68,10 @@ namespace Graphic {
 	private: System::Windows::Forms::OpenFileDialog^ openFileDialog1;
 	private: System::Windows::Forms::Button^ button6;
 	private: System::Windows::Forms::Button^ button7;
+	private: System::Windows::Forms::GroupBox^ groupBox3;
+	private: System::Windows::Forms::RadioButton^ radioButton7;
+	private: System::Windows::Forms::RadioButton^ radioButton6;
+
 
 	private:
 		/// <summary>
@@ -105,18 +109,22 @@ namespace Graphic {
 			this->загрузитьИзображениеToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
+			this->radioButton7 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton6 = (gcnew System::Windows::Forms::RadioButton());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
-			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
+			this->groupBox3->SuspendLayout();
 			this->tabPage2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
@@ -139,7 +147,7 @@ namespace Graphic {
 			this->button2->AutoSize = true;
 			this->button2->Font = (gcnew System::Drawing::Font(L"Arial", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button2->Location = System::Drawing::Point(10, 364);
+			this->button2->Location = System::Drawing::Point(10, 378);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(153, 33);
 			this->button2->TabIndex = 1;
@@ -152,7 +160,7 @@ namespace Graphic {
 			this->button3->AutoSize = true;
 			this->button3->Font = (gcnew System::Drawing::Font(L"Arial", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button3->Location = System::Drawing::Point(335, 364);
+			this->button3->Location = System::Drawing::Point(335, 376);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(153, 33);
 			this->button3->TabIndex = 2;
@@ -170,7 +178,7 @@ namespace Graphic {
 				static_cast<System::Byte>(204)));
 			this->groupBox1->Location = System::Drawing::Point(10, 255);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(478, 103);
+			this->groupBox1->Size = System::Drawing::Size(478, 117);
 			this->groupBox1->TabIndex = 3;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Стиль шрифта";
@@ -221,6 +229,7 @@ namespace Graphic {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(319, 22);
 			this->textBox1->TabIndex = 4;
+			this->textBox1->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MyForm::textBox1_KeyPress);
 			// 
 			// label1
 			// 
@@ -362,6 +371,7 @@ namespace Graphic {
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->groupBox3);
 			this->tabPage1->Controls->Add(this->label1);
 			this->tabPage1->Controls->Add(this->listBox1);
 			this->tabPage1->Controls->Add(this->button1);
@@ -378,6 +388,41 @@ namespace Graphic {
 			this->tabPage1->Text = L"Текстовый редактор";
 			this->tabPage1->UseVisualStyleBackColor = true;
 			// 
+			// groupBox3
+			// 
+			this->groupBox3->Controls->Add(this->radioButton7);
+			this->groupBox3->Controls->Add(this->radioButton6);
+			this->groupBox3->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->groupBox3->Location = System::Drawing::Point(494, 73);
+			this->groupBox3->Name = L"groupBox3";
+			this->groupBox3->Size = System::Drawing::Size(150, 100);
+			this->groupBox3->TabIndex = 8;
+			this->groupBox3->TabStop = false;
+			this->groupBox3->Text = L"Тип данных";
+			// 
+			// radioButton7
+			// 
+			this->radioButton7->AutoSize = true;
+			this->radioButton7->Location = System::Drawing::Point(7, 55);
+			this->radioButton7->Name = L"radioButton7";
+			this->radioButton7->Size = System::Drawing::Size(66, 26);
+			this->radioButton7->TabIndex = 1;
+			this->radioButton7->TabStop = true;
+			this->radioButton7->Text = L"Текст";
+			this->radioButton7->UseVisualStyleBackColor = true;
+			// 
+			// radioButton6
+			// 
+			this->radioButton6->AutoSize = true;
+			this->radioButton6->Location = System::Drawing::Point(7, 28);
+			this->radioButton6->Name = L"radioButton6";
+			this->radioButton6->Size = System::Drawing::Size(71, 26);
+			this->radioButton6->TabIndex = 0;
+			this->radioButton6->TabStop = true;
+			this->radioButton6->Text = L"Число";
+			this->radioButton6->UseVisualStyleBackColor = true;
+			// 
 			// tabPage2
 			// 
 			this->tabPage2->Controls->Add(this->button7);
@@ -392,6 +437,16 @@ namespace Graphic {
 			this->tabPage2->TabIndex = 1;
 			this->tabPage2->Text = L"Графический редактор";
 			this->tabPage2->UseVisualStyleBackColor = true;
+			// 
+			// button7
+			// 
+			this->button7->Location = System::Drawing::Point(8, 178);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(118, 56);
+			this->button7->TabIndex = 4;
+			this->button7->Text = L"Повернуть";
+			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &MyForm::button7_Click);
 			// 
 			// button6
 			// 
@@ -434,16 +489,6 @@ namespace Graphic {
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
 			// 
-			// button7
-			// 
-			this->button7->Location = System::Drawing::Point(8, 178);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(118, 56);
-			this->button7->TabIndex = 4;
-			this->button7->Text = L"Повернуть";
-			this->button7->UseVisualStyleBackColor = true;
-			this->button7->Click += gcnew System::EventHandler(this, &MyForm::button7_Click);
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -454,7 +499,8 @@ namespace Graphic {
 			this->Controls->Add(this->menuStrip1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 			this->MainMenuStrip = this->menuStrip1;
-			this->MinimumSize = System::Drawing::Size(530, 460);
+			this->MaximumSize = System::Drawing::Size(729, 612);
+			this->MinimumSize = System::Drawing::Size(729, 612);
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"MyForm";
@@ -467,6 +513,8 @@ namespace Graphic {
 			this->tabControl1->ResumeLayout(false);
 			this->tabPage1->ResumeLayout(false);
 			this->tabPage1->PerformLayout();
+			this->groupBox3->ResumeLayout(false);
+			this->groupBox3->PerformLayout();
 			this->tabPage2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
@@ -598,10 +646,10 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 
 	// Draw polygon to screen
 	g->DrawPolygon(bluePen, curvePoints);
-	g->DrawEllipse(bluePen, 10, 20, 30, 40);
+	g->DrawEllipse(bluePen, 231, 231, 20, 20);
 
 	// Fill polygon 
-	g->FillClosedCurve(hBrush, curvePoints);
+	//g->FillClosedCurve(hBrush, curvePoints);
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 	pictureBox1->Invalidate();
@@ -628,6 +676,22 @@ private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e
 		MessageBox::Show("Откройте изображение", "Ошибка ввода данных",
 			MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
 	}
+}
+private: System::Void textBox1_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+	if (radioButton6->Checked == true) {
+		if (e->KeyChar == '.') {
+			if (this->textBox1->Text->Contains(".") && !this->textBox1->SelectedText->Contains("."))
+				e->Handled = true;
+		}
+		else if (e->KeyChar == '-' && !(this->listBox1->Text->Contains("-"))) {
+			e->Handled = true;
+			textBox1->Text = "-" + textBox1->Text;
+		}
+		else if (!Char::IsDigit(e->KeyChar) && e->KeyChar != 0x08) {
+			e->Handled = true;
+		}
+	}
+	
 }
 };
 }
