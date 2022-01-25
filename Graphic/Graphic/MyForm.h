@@ -1,5 +1,7 @@
 #pragma once
 #include"Form2.h"
+#include<list>
+#include<string>
 namespace Graphic {
 
 	using namespace System;
@@ -79,11 +81,33 @@ namespace Graphic {
 	private: System::Windows::Forms::ToolStripMenuItem^ открыть¬идеоToolStripMenuItem;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 
+
+	private: System::Windows::Forms::ImageList^ imageList1;
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel1;
+	private: System::Windows::Forms::LinkLabel^ linkLabel1;
+	private: System::Windows::Forms::LinkLabel^ linkLabel2;
+	private: System::Windows::Forms::LinkLabel^ linkLabel3;
+	private: System::Windows::Forms::LinkLabel^ linkLabel4;
+	private: System::Windows::Forms::LinkLabel^ linkLabel5;
+
+
+
+
+
+
+
+
+
+
+
+	private: System::ComponentModel::IContainer^ components;
+
 	private:
 		/// <summary>
 		/// ќб€зательна€ переменна€ конструктора.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -92,6 +116,7 @@ namespace Graphic {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
@@ -127,7 +152,15 @@ namespace Graphic {
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->playerVideo = (gcnew AxWMPLib::AxWindowsMediaPlayer());
+			this->imageList1 = (gcnew System::Windows::Forms::ImageList(this->components));
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
+			this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
+			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
+			this->linkLabel2 = (gcnew System::Windows::Forms::LinkLabel());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->linkLabel3 = (gcnew System::Windows::Forms::LinkLabel());
+			this->linkLabel4 = (gcnew System::Windows::Forms::LinkLabel());
+			this->linkLabel5 = (gcnew System::Windows::Forms::LinkLabel());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
@@ -138,6 +171,8 @@ namespace Graphic {
 			this->tabPage3->SuspendLayout();
 			this->tableLayoutPanel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->playerVideo))->BeginInit();
+			this->flowLayoutPanel1->SuspendLayout();
+			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -383,6 +418,7 @@ namespace Graphic {
 			// 
 			// tabPage3
 			// 
+			this->tabPage3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->tabPage3->Controls->Add(this->tableLayoutPanel1);
 			resources->ApplyResources(this->tabPage3, L"tabPage3");
 			this->tabPage3->Name = L"tabPage3";
@@ -392,6 +428,7 @@ namespace Graphic {
 			// 
 			resources->ApplyResources(this->tableLayoutPanel1, L"tableLayoutPanel1");
 			this->tableLayoutPanel1->Controls->Add(this->playerVideo, 0, 0);
+			this->tableLayoutPanel1->Controls->Add(this->panel1, 1, 0);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			// 
 			// playerVideo
@@ -399,6 +436,76 @@ namespace Graphic {
 			resources->ApplyResources(this->playerVideo, L"playerVideo");
 			this->playerVideo->Name = L"playerVideo";
 			this->playerVideo->OcxState = (cli::safe_cast<System::Windows::Forms::AxHost::State^>(resources->GetObject(L"playerVideo.OcxState")));
+			// 
+			// imageList1
+			// 
+			this->imageList1->ImageStream = (cli::safe_cast<System::Windows::Forms::ImageListStreamer^>(resources->GetObject(L"imageList1.ImageStream")));
+			this->imageList1->TransparentColor = System::Drawing::Color::Transparent;
+			this->imageList1->Images->SetKeyName(0, L"1.png");
+			this->imageList1->Images->SetKeyName(1, L"2.png");
+			// 
+			// flowLayoutPanel1
+			// 
+			resources->ApplyResources(this->flowLayoutPanel1, L"flowLayoutPanel1");
+			this->flowLayoutPanel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->flowLayoutPanel1->Controls->Add(this->linkLabel1);
+			this->flowLayoutPanel1->Controls->Add(this->linkLabel2);
+			this->flowLayoutPanel1->Controls->Add(this->linkLabel3);
+			this->flowLayoutPanel1->Controls->Add(this->linkLabel4);
+			this->flowLayoutPanel1->Controls->Add(this->linkLabel5);
+			this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
+			// 
+			// linkLabel1
+			// 
+			this->linkLabel1->BackColor = System::Drawing::Color::Transparent;
+			resources->ApplyResources(this->linkLabel1, L"linkLabel1");
+			this->linkLabel1->ImageList = this->imageList1;
+			this->linkLabel1->LinkColor = System::Drawing::Color::White;
+			this->linkLabel1->Name = L"linkLabel1";
+			this->linkLabel1->TabStop = true;
+			this->linkLabel1->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &MyForm::linkLabel1_LinkClicked);
+			// 
+			// linkLabel2
+			// 
+			resources->ApplyResources(this->linkLabel2, L"linkLabel2");
+			this->linkLabel2->ImageList = this->imageList1;
+			this->linkLabel2->LinkColor = System::Drawing::Color::White;
+			this->linkLabel2->Name = L"linkLabel2";
+			this->linkLabel2->TabStop = true;
+			this->linkLabel2->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &MyForm::linkLabel2_LinkClicked);
+			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::SystemColors::Control;
+			this->panel1->Controls->Add(this->flowLayoutPanel1);
+			resources->ApplyResources(this->panel1, L"panel1");
+			this->panel1->Name = L"panel1";
+			// 
+			// linkLabel3
+			// 
+			this->linkLabel3->BackColor = System::Drawing::Color::Transparent;
+			resources->ApplyResources(this->linkLabel3, L"linkLabel3");
+			this->linkLabel3->ImageList = this->imageList1;
+			this->linkLabel3->LinkColor = System::Drawing::Color::White;
+			this->linkLabel3->Name = L"linkLabel3";
+			this->linkLabel3->TabStop = true;
+			// 
+			// linkLabel4
+			// 
+			this->linkLabel4->BackColor = System::Drawing::Color::Transparent;
+			resources->ApplyResources(this->linkLabel4, L"linkLabel4");
+			this->linkLabel4->ImageList = this->imageList1;
+			this->linkLabel4->LinkColor = System::Drawing::Color::White;
+			this->linkLabel4->Name = L"linkLabel4";
+			this->linkLabel4->TabStop = true;
+			// 
+			// linkLabel5
+			// 
+			resources->ApplyResources(this->linkLabel5, L"linkLabel5");
+			this->linkLabel5->ImageList = this->imageList1;
+			this->linkLabel5->LinkColor = System::Drawing::Color::White;
+			this->linkLabel5->Name = L"linkLabel5";
+			this->linkLabel5->TabStop = true;
 			// 
 			// MyForm
 			// 
@@ -411,6 +518,7 @@ namespace Graphic {
 			this->MainMenuStrip = this->menuStrip1;
 			this->MaximizeBox = false;
 			this->Name = L"MyForm";
+			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			this->groupBox2->ResumeLayout(false);
@@ -425,6 +533,8 @@ namespace Graphic {
 			this->tabPage3->ResumeLayout(false);
 			this->tableLayoutPanel1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->playerVideo))->EndInit();
+			this->flowLayoutPanel1->ResumeLayout(false);
+			this->panel1->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -605,5 +715,17 @@ private: System::Void открыть¬идеоToolStripMenuItem_Click(System::Object^ sender
 	if (openFileDialog1->FileName != nullptr)
 		this->playerVideo->URL = this->openFileDialog1->FileName;
 }
+	   
+private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void linkLabel1_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+	playerVideo->URL = "D:\\OAIP\\Graphic\\wegotthis.mp4";
+	playerVideo->Ctlcontrols->play();
+}
+private: System::Void linkLabel2_LinkClicked(System::Object^ sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^ e) {
+	playerVideo->URL = "D:\\OAIP\\Graphic\\Ruk.mp4";
+	playerVideo->Ctlcontrols->play();
+}
 };
+
 }
