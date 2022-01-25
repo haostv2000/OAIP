@@ -23,7 +23,7 @@ namespace Graphic {
 			//
 			//TODO: äîáàâüòå êîä êîíñòğóêòîğà
 			//
-			comboBox1->SelectedIndex = 0;
+			//comboBox1->SelectedIndex = 0;
 		}
 
 	protected:
@@ -74,6 +74,10 @@ namespace Graphic {
 
 	private: System::Windows::Forms::ComboBox^ comboBox1;
 	private: System::Windows::Forms::TabPage^ tabPage3;
+	private: AxWMPLib::AxWindowsMediaPlayer^ playerVideo;
+
+	private: System::Windows::Forms::ToolStripMenuItem^ îòêğûòüÂèäåîToolStripMenuItem;
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 
 	private:
 		/// <summary>
@@ -110,6 +114,7 @@ namespace Graphic {
 			this->ìåíşToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->òåêñòîâûéĞåäàêòîğToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->çàãğóçèòüÈçîáğàæåíèåToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->îòêğûòüÂèäåîToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
@@ -120,6 +125,8 @@ namespace Graphic {
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->playerVideo = (gcnew AxWMPLib::AxWindowsMediaPlayer());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
@@ -129,6 +136,8 @@ namespace Graphic {
 			this->tabPage2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->tabPage3->SuspendLayout();
+			this->tableLayoutPanel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->playerVideo))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -275,7 +284,10 @@ namespace Graphic {
 			// 
 			// òåêñòîâûéĞåäàêòîğToolStripMenuItem
 			// 
-			this->òåêñòîâûéĞåäàêòîğToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->çàãğóçèòüÈçîáğàæåíèåToolStripMenuItem });
+			this->òåêñòîâûéĞåäàêòîğToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->çàãğóçèòüÈçîáğàæåíèåToolStripMenuItem,
+					this->îòêğûòüÂèäåîToolStripMenuItem
+			});
 			this->òåêñòîâûéĞåäàêòîğToolStripMenuItem->Name = L"òåêñòîâûéĞåäàêòîğToolStripMenuItem";
 			resources->ApplyResources(this->òåêñòîâûéĞåäàêòîğToolStripMenuItem, L"òåêñòîâûéĞåäàêòîğToolStripMenuItem");
 			// 
@@ -284,6 +296,12 @@ namespace Graphic {
 			this->çàãğóçèòüÈçîáğàæåíèåToolStripMenuItem->Name = L"çàãğóçèòüÈçîáğàæåíèåToolStripMenuItem";
 			resources->ApplyResources(this->çàãğóçèòüÈçîáğàæåíèåToolStripMenuItem, L"çàãğóçèòüÈçîáğàæåíèåToolStripMenuItem");
 			this->çàãğóçèòüÈçîáğàæåíèåToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::çàãğóçèòüÈçîáğàæåíèåToolStripMenuItem_Click);
+			// 
+			// îòêğûòüÂèäåîToolStripMenuItem
+			// 
+			this->îòêğûòüÂèäåîToolStripMenuItem->Name = L"îòêğûòüÂèäåîToolStripMenuItem";
+			resources->ApplyResources(this->îòêğûòüÂèäåîToolStripMenuItem, L"îòêğûòüÂèäåîToolStripMenuItem");
+			this->îòêğûòüÂèäåîToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::îòêğûòüÂèäåîToolStripMenuItem_Click);
 			// 
 			// tabControl1
 			// 
@@ -365,12 +383,22 @@ namespace Graphic {
 			// 
 			// tabPage3
 			// 
+			this->tabPage3->Controls->Add(this->tableLayoutPanel1);
 			resources->ApplyResources(this->tabPage3, L"tabPage3");
 			this->tabPage3->Name = L"tabPage3";
 			this->tabPage3->UseVisualStyleBackColor = true;
 			// 
-			// axWindowsMediaPlayer1
+			// tableLayoutPanel1
 			// 
+			resources->ApplyResources(this->tableLayoutPanel1, L"tableLayoutPanel1");
+			this->tableLayoutPanel1->Controls->Add(this->playerVideo, 0, 0);
+			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
+			// 
+			// playerVideo
+			// 
+			resources->ApplyResources(this->playerVideo, L"playerVideo");
+			this->playerVideo->Name = L"playerVideo";
+			this->playerVideo->OcxState = (cli::safe_cast<System::Windows::Forms::AxHost::State^>(resources->GetObject(L"playerVideo.OcxState")));
 			// 
 			// MyForm
 			// 
@@ -395,6 +423,8 @@ namespace Graphic {
 			this->tabPage2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->tabPage3->ResumeLayout(false);
+			this->tableLayoutPanel1->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->playerVideo))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -569,6 +599,11 @@ private: System::Void textBox1_KeyPress(System::Object^ sender, System::Windows:
 			e->Handled = true;
 		}
 	}
+}
+private: System::Void îòêğûòüÂèäåîToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	openFileDialog1->ShowDialog();
+	if (openFileDialog1->FileName != nullptr)
+		this->playerVideo->URL = this->openFileDialog1->FileName;
 }
 };
 }
