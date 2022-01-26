@@ -25,7 +25,7 @@ namespace Graphic {
 			//
 			//TODO: добавьте код конструктора
 			//
-			//comboBox1->SelectedIndex = 0;
+			comboBox1->SelectedIndex = 1;
 		}
 
 	protected:
@@ -101,6 +101,8 @@ namespace Graphic {
 
 
 
+
+
 	private: System::ComponentModel::IContainer^ components;
 
 	private:
@@ -152,15 +154,15 @@ namespace Graphic {
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->playerVideo = (gcnew AxWMPLib::AxWindowsMediaPlayer());
-			this->imageList1 = (gcnew System::Windows::Forms::ImageList(this->components));
-			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
+			this->imageList1 = (gcnew System::Windows::Forms::ImageList(this->components));
 			this->linkLabel2 = (gcnew System::Windows::Forms::LinkLabel());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->linkLabel3 = (gcnew System::Windows::Forms::LinkLabel());
 			this->linkLabel4 = (gcnew System::Windows::Forms::LinkLabel());
 			this->linkLabel5 = (gcnew System::Windows::Forms::LinkLabel());
+			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			this->menuStrip1->SuspendLayout();
@@ -171,8 +173,8 @@ namespace Graphic {
 			this->tabPage3->SuspendLayout();
 			this->tableLayoutPanel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->playerVideo))->BeginInit();
-			this->flowLayoutPanel1->SuspendLayout();
 			this->panel1->SuspendLayout();
+			this->flowLayoutPanel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -437,12 +439,12 @@ namespace Graphic {
 			this->playerVideo->Name = L"playerVideo";
 			this->playerVideo->OcxState = (cli::safe_cast<System::Windows::Forms::AxHost::State^>(resources->GetObject(L"playerVideo.OcxState")));
 			// 
-			// imageList1
+			// panel1
 			// 
-			this->imageList1->ImageStream = (cli::safe_cast<System::Windows::Forms::ImageListStreamer^>(resources->GetObject(L"imageList1.ImageStream")));
-			this->imageList1->TransparentColor = System::Drawing::Color::Transparent;
-			this->imageList1->Images->SetKeyName(0, L"1.png");
-			this->imageList1->Images->SetKeyName(1, L"2.png");
+			this->panel1->BackColor = System::Drawing::SystemColors::Control;
+			this->panel1->Controls->Add(this->flowLayoutPanel1);
+			resources->ApplyResources(this->panel1, L"panel1");
+			this->panel1->Name = L"panel1";
 			// 
 			// flowLayoutPanel1
 			// 
@@ -465,6 +467,14 @@ namespace Graphic {
 			this->linkLabel1->TabStop = true;
 			this->linkLabel1->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &MyForm::linkLabel1_LinkClicked);
 			// 
+			// imageList1
+			// 
+			this->imageList1->ImageStream = (cli::safe_cast<System::Windows::Forms::ImageListStreamer^>(resources->GetObject(L"imageList1.ImageStream")));
+			this->imageList1->TransparentColor = System::Drawing::Color::Transparent;
+			this->imageList1->Images->SetKeyName(0, L"1.png");
+			this->imageList1->Images->SetKeyName(1, L"2.png");
+			this->imageList1->Images->SetKeyName(2, L"kopa.png");
+			// 
 			// linkLabel2
 			// 
 			resources->ApplyResources(this->linkLabel2, L"linkLabel2");
@@ -473,13 +483,6 @@ namespace Graphic {
 			this->linkLabel2->Name = L"linkLabel2";
 			this->linkLabel2->TabStop = true;
 			this->linkLabel2->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &MyForm::linkLabel2_LinkClicked);
-			// 
-			// panel1
-			// 
-			this->panel1->BackColor = System::Drawing::SystemColors::Control;
-			this->panel1->Controls->Add(this->flowLayoutPanel1);
-			resources->ApplyResources(this->panel1, L"panel1");
-			this->panel1->Name = L"panel1";
 			// 
 			// linkLabel3
 			// 
@@ -533,8 +536,8 @@ namespace Graphic {
 			this->tabPage3->ResumeLayout(false);
 			this->tableLayoutPanel1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->playerVideo))->EndInit();
-			this->flowLayoutPanel1->ResumeLayout(false);
 			this->panel1->ResumeLayout(false);
+			this->flowLayoutPanel1->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -548,7 +551,7 @@ namespace Graphic {
 	}
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (textBox1->Text != "") {
-		//this->listBox1->Items->Clear();
+		this->listBox1->Items->Clear();
 		this->listBox1->Font = (gcnew System::Drawing::Font(L"Arial",14, System::Drawing::FontStyle::Regular, System:: Drawing::GraphicsUnit::Point, 
 			static_cast<System:: Byte>(204))); 
 		this->listBox1->ForeColor = System:: Drawing::Color::Black; 
@@ -648,26 +651,31 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 	Graphics^ g = pictureBox1->CreateGraphics();
-	Pen^ bluePen = gcnew Pen(Color::Blue, 1.0f);
-	HatchBrush^ hBrush = gcnew HatchBrush(HatchStyle::ZigZag, Color::White, Color::Blue);
-	//System::Drawing::Font(L"Arial", 14);
-	// Create points that define polygon.
+	Pen^ bluePen = gcnew Pen(Color::Blue, 5.0f);
+	HatchBrush^ hBrush = gcnew HatchBrush(HatchStyle::Percent90, Color::White, Color::Blue);
+	SolidBrush^ myBrush = gcnew SolidBrush(Color::Red);
+	SolidBrush^ myBrush2 = gcnew SolidBrush(Color::Aqua);
+	Rectangle myrectangle = Rectangle(31, 31, 200, 20);
+	Rectangle myrectangle2 = Rectangle(31, 51, 200, 20);
+
+	g->FillRectangle(myBrush, myrectangle);
+	g->FillRectangle(myBrush2, myrectangle2);
+	//// Create points that define polygon.
 	Point point1 = Point(50, 250);
-	Point point2 = Point(100, 250);
+	Point point2 = Point(250, 250);
 	Point point3 = Point(150, 300);
 	Point point4 = Point(200, 250);
 	Point point5 = Point(300, 200);
 	Point point6 = Point(200, 100);
 	Point point7 = Point(150, 50);
 	array<Point>^ curvePoints = { point1,point2,point3,point4,point5,point6,point7 };
-
-	// Draw polygon to screen
+	
 	g->DrawPolygon(bluePen, curvePoints);
 	g->DrawEllipse(bluePen, 231, 231, 20, 20);
+	
 	System::Drawing::Font^ font = gcnew System::Drawing::Font("Myriad Pro", 14, FontStyle::Regular);
 	g->DrawString("Hello World", font, Brushes::Blue, Rectangle(0, 0, 100, 150));
-	// Fill polygon 
-	//g->FillClosedCurve(hBrush, curvePoints);
+	g->FillClosedCurve(hBrush, curvePoints);
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 	pictureBox1->Invalidate();
